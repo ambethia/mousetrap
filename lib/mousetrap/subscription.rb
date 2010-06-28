@@ -9,6 +9,7 @@ module Mousetrap
       :credit_card_expiration_month,
       :credit_card_expiration_year,
       :billing_zip_code,
+      :initial_bill_date,
       :plan,
 
       :customer_code # belongs to customer
@@ -48,6 +49,7 @@ module Mousetrap
         :credit_card_expiration_month => credit_card_expiration_month,
         :credit_card_expiration_year  => credit_card_expiration_year,
         :billing_zip_code             => billing_zip_code,
+        :initial_bill_date            => initial_bill_date,
       }
     end
 
@@ -105,13 +107,14 @@ module Mousetrap
 
     def self.attributes_for_api(attributes)
       {
-        :planCode     => attributes[:plan_code],
-        :ccFirstName  => attributes[:billing_first_name],
-        :ccLastName   => attributes[:billing_last_name],
-        :ccNumber     => attributes[:credit_card_number],
-        :ccExpMonth   => ("%02d" % attributes[:credit_card_expiration_month] if attributes[:credit_card_expiration_month]),
-        :ccExpYear    => attributes[:credit_card_expiration_year],
-        :ccZip        => attributes[:billing_zip_code],
+        :planCode        => attributes[:plan_code],
+        :ccFirstName     => attributes[:billing_first_name],
+        :ccLastName      => attributes[:billing_last_name],
+        :ccNumber        => attributes[:credit_card_number],
+        :ccExpMonth      => ("%02d" % attributes[:credit_card_expiration_month] if attributes[:credit_card_expiration_month]),
+        :ccExpYear       => attributes[:credit_card_expiration_year],
+        :ccZip           => attributes[:billing_zip_code],
+        :initialBillDate => attributes[:initial_bill_date],
       }
     end
 

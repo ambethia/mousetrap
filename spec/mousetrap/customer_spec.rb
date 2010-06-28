@@ -11,13 +11,14 @@ describe Mousetrap::Customer do
       :company => customer.company,
       :code => customer.code,
       :subscription => {
-        :planCode     => customer.subscription.plan_code,
-        :ccFirstName  => customer.subscription.billing_first_name,
-        :ccLastName   => customer.subscription.billing_last_name,
-        :ccNumber     => customer.subscription.credit_card_number,
-        :ccExpMonth   => customer.subscription.credit_card_expiration_month,
-        :ccExpYear    => customer.subscription.credit_card_expiration_year,
-        :ccZip        => customer.subscription.billing_zip_code,
+        :planCode        => customer.subscription.plan_code,
+        :ccFirstName     => customer.subscription.billing_first_name,
+        :ccLastName      => customer.subscription.billing_last_name,
+        :ccNumber        => customer.subscription.credit_card_number,
+        :ccExpMonth      => customer.subscription.credit_card_expiration_month,
+        :ccExpYear       => customer.subscription.credit_card_expiration_year,
+        :ccZip           => customer.subscription.billing_zip_code,
+        :initialBillDate => customer.subscription.initial_bill_date,
       }
     }
   end

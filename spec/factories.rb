@@ -5,7 +5,7 @@ Factory.define :new_customer, :class => Mousetrap::Customer, :default_strategy =
   f.company { random_string }
   f.code { |me| me.email }
   f.add_attribute :id, nil
-  f.subscription_attributes { Factory.attributes_for :subscription }
+  f.subscription_attributes { Factory.attributes_for(:subscription).merge(:initial_bill_date => "2012-01-01") }
 end
 
 Factory.define :existing_customer, :parent => :new_customer, :default_strategy => :stub do |f|
